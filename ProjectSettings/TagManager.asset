@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LevelManager
+  - GridManager
+  - MusicManager
+  - EventManager
+  - WaypointsManager
+  - Building
+  - Road
+  - Unset
   layers:
   - Default
   - TransparentFX
