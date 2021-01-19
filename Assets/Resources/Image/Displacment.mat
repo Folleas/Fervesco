@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ScrollTexture
+  m_Name: Displacment
   m_Shader: {fileID: -6465566751694194690, guid: d7c37b19ec9616b4287ac2b5d9f8086d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,14 +20,17 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_CC885585:
-        m_Texture: {fileID: 2800000, guid: a3668d78a46978d4b8922741e4aac2b6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 756e8cef098ad0946be0f98056cde72a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _DeformationFactor: 0.2
-    - _VoronoiAngleOffset: 5
-    - _VoronoiCellDensity: 2
+    - _DeformationFactor: 0.05
+    - _FresnelPower: 1.29
+    - _OutlineWidth: 6
+    - _VoronoiAngleOffset: 1
+    - _VoronoiCellDensity: 1
     m_Colors:
-    - Vector2_8BCBC96D: {r: 1, g: 1, b: 0, a: 0}
-    - Vector2_A2178CCB: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_8BCBC96D: {r: 0.1, g: 0.1, b: 0.1, a: 0}
+    - Vector2_A2178CCB: {r: 0.1, g: 0.1, b: 0.1, a: 0}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
