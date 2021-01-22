@@ -14,13 +14,13 @@ public class Event
 {
     TimeCode timecode;
     TimeCode inputOffset;
-    string moveID;
+    string movementID;
     EventStatus status;
 
-    public Event(TimeCode timecode, TimeCode inputOffset, string moveID) {
+    public Event(TimeCode timecode, TimeCode inputOffset, string movementID) {
         this.timecode = timecode;
         this.inputOffset = inputOffset;
-        this.moveID = moveID;
+        this.movementID = movementID;
         this.status = EventStatus.UNDEFINED;
     }
     
@@ -36,8 +36,8 @@ public class Event
     public TimeCode getInputOffset() {
         return this.inputOffset;
     }
-    public string getMove() {
-        return this.moveID;
+    public string getMovementID() {
+        return this.movementID;
     }
     public EventStatus getStatus() {
         return this.status;

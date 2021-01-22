@@ -18,12 +18,12 @@ public class RecordedMovements : EditorWindow
 
     void ShowRecordedMoves() {
         GUILayout.Label("\nRecorded Movements", EditorStyles.boldLabel);
-        GUILayout.Label("MoveID                                     nb", EditorStyles.miniLabel);
+        GUILayout.Label("MoveID", EditorStyles.miniLabel);
         var info = new System.IO.DirectoryInfo(Application.persistentDataPath + "/Movements/");
         var fileInfo = info.GetFiles();
         
         foreach (var file in fileInfo) {
-            EditorGUILayout.LabelField(file.Name.Replace(".mv", ""), SaveMovements.LoadMovement(file.Name.Replace(".mv", "")).Count.ToString());
+            EditorGUILayout.LabelField(file.Name.Replace(".mv", ""));
         }
     }
 }

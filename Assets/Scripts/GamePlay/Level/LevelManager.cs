@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 {
     public bool paused = false;
     public LevelID levelID = LevelID.UNDEFINED;
+    public int streak = 0;
     void Awake()
     {
         GetComponentInChildren<EventManager>().levelID = levelID;
@@ -28,5 +29,6 @@ public class LevelManager : MonoBehaviour
             GetComponentInChildren<EventManager>().paused = paused;
             GetComponentInChildren<MusicManager>().paused = paused;
         }
+        streak = GetComponentInChildren<EventManager>().streak;
     }
 }

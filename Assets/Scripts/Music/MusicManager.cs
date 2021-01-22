@@ -15,7 +15,6 @@ public class MusicManager : MonoBehaviour
         audioSource.clip = Resources.Load("Music/Music1") as AudioClip;
     }
     private void Update() {
-        Debug.Log("MusisManager : " + paused);
         if (!paused) {
             if (!musicPlayed) {
                 audioSource.Play();

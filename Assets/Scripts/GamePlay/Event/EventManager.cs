@@ -13,6 +13,14 @@ public class EventManager : MonoBehaviour
     float chrono = 0;
     int eventIndex = 0;
     public LevelID levelID = LevelID.UNDEFINED;
+    private int _streak = 0;
+    public Event currentEvent;
+
+    public int streak {
+        get {
+            return _streak;
+        }
+    }
 
     void Start()
     {
@@ -24,16 +32,27 @@ public class EventManager : MonoBehaviour
         if (!paused) {
             chrono += Time.deltaTime;
             if (events.Count > eventIndex) {
+                currentEvent = events[eventIndex];
+                Debug.Log(currentEvent.getMovementID());
                 float timeCodeSeconds = events[eventIndex].getTimeCodeInSeconds();
                 if (chrono >= timeCodeSeconds) {
                     MovementData data = gridManager.getGridState();
-                    Debug.Log("INPUT : " + eventIndex + " " + chrono);
                     if (data.grid != null) {
-                        //check grid
+                        Debug.Log(events[eventIndex].getMovementID());
+                        MovementData modelData = SaveMovements.LoadMovement(events[eventIndex].getMovementID());
+                        Grid model = new Grid(modelData.width, modelData.height);
+                        model.gridState = modelData.grid;
+                        if (PatternMatching.MatchPattern(gridManager.grid, model)) {
+                            Debug.Log("Succes");
+                            _streak++;
+                        }
+                        else {
+                            Debug.Log("Failed");
+                            _streak = 0;
+                        }
                     }
                     float inputOffsetSeconds = events[eventIndex].getInputOffsetInSeconds();
                     if (chrono >= timeCodeSeconds + inputOffsetSeconds) {
-                        Debug.Log("TOO LATE : " + eventIndex + " " + chrono);
                         eventIndex++;
                     }
                 }

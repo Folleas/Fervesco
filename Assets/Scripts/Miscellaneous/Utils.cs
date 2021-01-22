@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Utils : MonoBehaviour
 {
+    public static int ConvertTo1DPosition(int x, int y, int width) {
+        return x + width * y;
+    }
     // Get Mouse Position in World with Z = 0f
     public static Vector3 GetMouseWorldPosition()
     {

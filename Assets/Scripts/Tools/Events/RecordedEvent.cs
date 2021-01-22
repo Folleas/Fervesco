@@ -31,7 +31,10 @@ public class RecordedEvent : EditorWindow
             foreach (EventData data in eventsData) {
                 GUILayout.Label("Movement ID\t: " + data.movementID, EditorStyles.label);
                 GUILayout.Label("TimeCode\t: " + data.timeCodeMinutes.ToString() + ":" + data.timeCodeSeconds.ToString(), EditorStyles.label);
-                GUILayout.Label("InputOffset\t: " + data.inputOffsetMinutes.ToString() + ":" + data.inputOffsetSeconds.ToString() + "\n", EditorStyles.label);
+                GUILayout.Label("InputOffset\t: " + data.inputOffsetMinutes.ToString() + ":" + data.inputOffsetSeconds.ToString(), EditorStyles.label);
+                if (EditorGUILayout.Toggle("Delete", false)) {
+                }
+                GUILayout.Label("\n", EditorStyles.label);
             }
         }
         GUILayout.EndScrollView();

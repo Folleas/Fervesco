@@ -1,0 +1,1 @@
+﻿public enum PatternDirection {Up, Down, Left, Right, Undefined};
